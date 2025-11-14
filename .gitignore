@@ -1,0 +1,40 @@
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---- IDEs ----
+
+# CLion / IntelliJ
+.idea/
+cmake-build-*/
+
+# VSCode
+.vscode/
+
+# ---- CMake ----
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install/
+core
+
+# ---- General build output ----
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+*.log
+
+# ---- Backup / temp ----
+*~
+*.tmp
+*.swp
+
+# ---- Third Party Source ----
+mother-file
