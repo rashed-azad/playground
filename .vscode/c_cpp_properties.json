@@ -24,6 +24,7 @@
       "cStandard": "c17",
       "cppStandard": "c++17",
       "intelliSenseMode": "linux-gcc-x64",
+      "compileCommands": "${workspaceFolder}/build/compile_commands.json",
       // -------------------------------
       // Browse / navigation settings
       // -------------------------------
