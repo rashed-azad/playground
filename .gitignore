@@ -10,7 +10,7 @@
 cmake-build-*/
 
 # VSCode
-.vscode/
+# .vscode/
 
 # ---- CMake ----
 build/

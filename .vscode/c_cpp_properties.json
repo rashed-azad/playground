@@ -1,0 +1,40 @@
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "Linux",
+      // -------------------------------
+      // Include Paths
+      // -------------------------------
+      "includePath": [
+        "${workspaceFolder}/include/**",
+        "${workspaceFolder}/src/**",
+        "${workspaceFolder}/install/**",
+        "/usr/local/include",
+        "/usr/include"
+      ],
+      // -------------------------------
+      // Defines for IntelliSense only
+      // -------------------------------
+      "defines": [],
+      // -------------------------------
+      // Compiler / Standards
+      // -------------------------------
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "linux-gcc-x64",
+      // -------------------------------
+      // Browse / navigation settings
+      // -------------------------------
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "/usr/include",
+          "/usr/local/include"
+        ],
+        "limitSymbolsToIncludedHeaders": true,
+      }
+    }
+  ]
+}

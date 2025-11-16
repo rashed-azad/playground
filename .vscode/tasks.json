@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // ============================================================
+    // 1️⃣ CMake Configure
+    // ============================================================
+    {
+      "label": "CMake Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S",
+        ".", // Source folder
+        "-B",
+        "build", // Build folder
+        "-DCMAKE_BUILD_TYPE=Debug", // Optional: Debug build
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" // Generate compile_commands.json for IntelliSense
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    // ============================================================
+    // 2️⃣ CMake Build
+    // ============================================================
+    {
+      "label": "CMake Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    // ============================================================
+    // 3️⃣ CMake Clean
+    // ============================================================
+    {
+      "label": "CMake Clean",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build",
+        "--target",
+        "clean"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ]
+}

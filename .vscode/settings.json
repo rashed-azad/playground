@@ -1,0 +1,77 @@
+{
+  // ============================================================
+  // C/C++ IntelliSense & Compiler Settings
+  // ============================================================
+  // Path to the compiler inside your Docker/SSH Linux environment
+  "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+
+  // Match IntelliSense to the Linux GCC environment
+  "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+
+  // Default language standards (industry standard)
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.cStandard": "c11",
+
+  // Enable real-time syntax & error checking
+  "C_Cpp.errorSquiggles": "Enabled",
+
+  // Let VSCode auto-detect include paths (helpful for complex projects)
+  "C_Cpp.autoDetectIncludePaths": true,
+
+  // Tells VSCode to ignore large dependency folders (boost, qt, etc.)
+  // → Improves performance on large codebases
+  "C_Cpp.exclusionPolicy": "CheckFolders",
+
+
+
+  // ============================================================
+  // IntelliSense Performance Tuning
+  // ============================================================
+  // Disable fallback parser — use the full IntelliSense engine
+  "C_Cpp.intelliSenseEngineFallback": "Disabled",
+
+  // Increase the IntelliSense cache for large embedded projects
+  "C_Cpp.intelliSenseCacheSize": 512, // MB
+
+  // Default memory usage is usually best
+  "C_Cpp.intelliSenseMemoryUsage": "Default",
+
+  // Clean, stable autocomplete behavior
+  "C_Cpp.autocomplete": "Default",
+
+
+
+  // ============================================================
+  // Formatting & Style (clang-format)
+  // ============================================================
+  // Auto-format on save (industry standard)
+  "editor.formatOnSave": true,
+
+  // Fallback style if .clang-format is missing.
+  // "Google" is widely used; alternatives: "LLVM", "Chromium", "Mozilla", "Microsoft"
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+
+
+
+  // ============================================================
+  // Editor Quality-of-Life Settings
+  // ============================================================
+  // Remove annoying minimap
+  "editor.minimap.enabled": false,
+
+  // Show only important whitespace
+  "editor.renderWhitespace": "boundary",
+
+  // Standard indentation width for C/C++
+  "editor.tabSize": 4,
+
+  // Prevent VSCode from automatically adding weird associations
+  "C_Cpp.autoAddFileAssociations": false,
+
+
+
+  // ============================================================
+  // Optional: Logging (disable unless debugging VSCode)
+  // ============================================================
+  "C_Cpp.loggingLevel": "Warning"
+}

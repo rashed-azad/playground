@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run main",
+      "type": "cppdbg",
+      "request": "launch",
+      // -------------------------------
+      // Program & Working Directory
+      // -------------------------------
+      "program": "${workspaceFolder}/build/main",
+      "cwd": "${workspaceFolder}",
+      // -------------------------------
+      // Debugger settings
+      // -------------------------------
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "stopAtEntry": false,
+      // -------------------------------
+      // Pre-launch and arguments
+      // -------------------------------
+      "preLaunchTask": "CMake Build", // Automatically build before debug
+      "args": [], // Command-line arguments
+      "environment": [], // Environment variables
+      "externalConsole": false, // true if you want a separate terminal
+      // -------------------------------
+      // Logging
+      // -------------------------------
+      "logging": {
+        "engineLogging": false,
+        "trace": false,
+        "traceResponse": false
+      }
+    }
+  ]
+}
