@@ -11,8 +11,8 @@
   "C_Cpp.default.cStandard": "c11",
   // Enable real-time syntax & error checking
   "C_Cpp.errorSquiggles": "enabled",
-  // Let VSCode auto-detect include paths (helpful for complex projects)
-  "C_Cpp.autoDetectIncludePaths": true,
+  // Enable full IntelliSense engine (SUPER IMPORTANT)
+  "C_Cpp.intelliSenseEngine": "default",
   // Tells VSCode to ignore large dependency folders (boost, qt, etc.)
   // → Improves performance on large codebases
   "C_Cpp.exclusionPolicy": "checkFolders",
