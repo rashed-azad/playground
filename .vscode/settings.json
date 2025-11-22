@@ -1,49 +1,96 @@
 {
-  // ============================================================
-  // C/C++ IntelliSense & Compiler Settings
-  // ============================================================
-  // Path to the compiler inside your Docker/SSH Linux environment
-  "C_Cpp.default.compilerPath": "/usr/bin/gcc",
-  // Match IntelliSense to the Linux GCC environment
-  "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
-  // Default language standards (industry standard)
-  "C_Cpp.default.cppStandard": "c++17",
-  "C_Cpp.default.cStandard": "c11",
-  // Enable real-time syntax & error checking
-  "C_Cpp.errorSquiggles": "enabled",
-  // Enable full IntelliSense engine (SUPER IMPORTANT)
-  "C_Cpp.intelliSenseEngine": "default",
-  // Tells VSCode to ignore large dependency folders (boost, qt, etc.)
-  // → Improves performance on large codebases
-  "C_Cpp.exclusionPolicy": "checkFolders",
-  // ============================================================
-  // IntelliSense Performance Tuning
-  // ============================================================
-  // Increase the IntelliSense cache for large embedded projects
-  "C_Cpp.intelliSenseCacheSize": 512, // MB
-  // Clean, stable autocomplete behavior
-  "C_Cpp.autocomplete": "default",
-  // ============================================================
-  // Formatting & Style (clang-format)
-  // ============================================================
-  // Auto-format on save (industry standard)
+  // ---------------------------------------
+  // File Associations
+  // ---------------------------------------
+  "files.associations": {
+    "*.py": "python",
+    "*.hpp": "cpp",
+    "*.h": "c",
+    "*.cpp": "cpp",
+    "*.c": "c",
+    "*.cmake": "cmake",
+    "CMakeLists.txt": "cmake"
+  },
+  // ---------------------------------------
+  // CMake
+  // ---------------------------------------
+  "cmake.configureOnOpen": false,
+  "cmake.generator": "Unix Makefiles",
+  // ---------------------------------------
+  // Microsoft C/C++ Extension (disabled because clangd is used)
+  // ---------------------------------------
+  "C_Cpp.intelliSenseEngine": "disabled", // Disable Microsoft IntelliSense
+  "C_Cpp.errorSquiggles": "disabled", // Avoid duplicate diagnostics
+  "C_Cpp.autocomplete": "disabled", // Prevent conflicting suggestions
+  "C_Cpp.workspaceParsingPriority": "low",
+  "C_Cpp.workspaceSymbols": "All",
+  "C_Cpp.suggestSnippets": true,
+  // ---------------------------------------
+  // Clangd (primary IntelliSense engine)
+  // ---------------------------------------
+  "clangd.path": "/usr/bin/clangd-17",
+  "clangd.arguments": [
+    "--background-index", // Index project files in background
+    "--clang-tidy", // Enable clang-tidy diagnostics
+    "-j=16", // Use 16 worker threads
+    "--log=error", // Verbose logs (Output → clangd)
+    "--completion-style=detailed", // Detailed function signatures
+    "--pch-storage=memory", // Store PCHs in RAM
+    "--limit-results=500", // Limit completion and symbol results
+    "--enable-config", // Read project-level .clangd file
+    "--header-insertion=never", // Do not auto-insert includes
+    "--header-insertion-decorators=0", // Disable include hints
+    "--query-driver=/usr/bin/*gcc*,/usr/bin/*g++*", // Allow GCC/G++ as actual compilers
+    "--compile-commands-dir=${workspaceFolder}/build" // Location of compile_commands.json
+  ],
+  // ---------------------------------------
+  // Editor Settings
+  // ---------------------------------------
   "editor.formatOnSave": true,
-  // Fallback style if .clang-format is missing.
-  // "Google" is widely used; alternatives: "LLVM", "Chromium", "Mozilla", "Microsoft"
-  "C_Cpp.clang_format_fallbackStyle": "Google",
-  // ============================================================
-  // Editor Quality-of-Life Settings
-  // ============================================================
-  // Remove annoying minimap
-  "editor.minimap.enabled": false,
-  // Show only important whitespace
-  "editor.renderWhitespace": "boundary",
-  // Standard indentation width for C/C++
-  "editor.tabSize": 4,
-  // Prevent VSCode from automatically adding weird associations
-  "C_Cpp.autoAddFileAssociations": false,
-  // ============================================================
-  // Optional: Logging (disable unless debugging VSCode)
-  // ============================================================
-  "C_Cpp.loggingLevel": "Warning"
+  "editor.minimap.enabled": false, // Improve performance
+  "breadcrumbs.enabled": false, // Cleaner interface
+  "editor.smoothScrolling": false, // Reduce UI overhead
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  // ---------------------------------------
+  // Terminal
+  // ---------------------------------------
+  "terminal.integrated.scrollback": 1000000,
+  // ---------------------------------------
+  // Search Behavior
+  // ---------------------------------------
+  "search.exclude": {
+    "**/build-*": true,
+    "**/.cache": true
+  },
+  "search.followSymlinks": false,
+  // ---------------------------------------
+  // File Explorer
+  // ---------------------------------------
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+  // Reduce file-system watcher load
+  "files.watcherExclude": {
+    "**/build-*/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true
+  },
+  // ---------------------------------------
+  // Git / GitLens
+  // ---------------------------------------
+  "git.autorefresh": false,
+  "git.detectSubmodules": false,
+  // ---------------------------------------
+  // JavaScript / TypeScript (speed optimization)
+  // ---------------------------------------
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
+  // ---------------------------------------
+  // Extension Recommendation Handling
+  // ---------------------------------------
+  "extensions.ignoreRecommendations": false
 }

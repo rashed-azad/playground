@@ -1,0 +1,6 @@
+Diagnostics:
+  UnusedIncludes: Strict    # Warn about all unused includes (strict mode)
+
+CompileFlags:
+  Add:
+    - "-std=gnu++17"        # Force clangd to parse files using GNU C++17 standard

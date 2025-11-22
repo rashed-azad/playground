@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "llvm-vs-code-extensions.vscode-clangd",
+        "clemenspeters.format-json",
+        "eamodio.gitlens",
+        "foxundermoon.shell-format",
+        "github.copilot",
+        "github.copilot-chat",
+        "matepek.vscode-catch2-test-adapter",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "njpwerner.autodocstring"
+    ],
+    "unwantedRecommendations": []
+}
