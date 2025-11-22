@@ -1,6 +1,19 @@
 Diagnostics:
-  UnusedIncludes: Strict    # Warn about all unused includes (strict mode)
+  UnusedIncludes: Strict           # Warn about unused includes
+  Suppress:
+    - "system-headers"             # Ignore warnings from system header files
 
 CompileFlags:
   Add:
-    - "-std=gnu++17"        # Force clangd to parse files using GNU C++17 standard
+    - "-std=gnu++17"               # Parse with GNU++17 standard
+    - "-Wall"                      # Basic warnings
+    - "-Wextra"                    # More strict warnings
+    - "-Wpedantic"                 # Warn on nonstandard code
+    - "-Wconversion"               # Warn on implicit narrowing conversions
+
+InlayHints:
+  Enabled: true                    # Show inline type hints
+
+Index:
+  Background: Build                # Background indexing
+  StandardLibrary: Yes             # Index STL and system headers
